@@ -1,113 +1,110 @@
 body {
-    background: #030203;
-    color: #F2EFF5;
-    font-family: Acme;
-    font-size: 40pt;
-}
-
-.stack_div {
-    margin-top: 20px;
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 0px 20px 0px 20px;
-    background: #6106B1;
-    border-radius: 15px;
-    align-items: center;
-}
-
-.stack_div img:not(:last-child) {
-    margin-right: 20px;
-}
-
-.about_me_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10%;
-}
-
-.about_me__photo img {
-    margin-right: 20px;
-    width: 250px;
-    height: 350px;
-    position: relative;
-    transform: translateX(-13px) translateY(-13px);
-    overflow: hidden;
-    filter: drop-shadow(7px 7px 19px #000000);
-    user-select: none;
-}
-
-.about_me__photo::before {
-    content: "";
-    position: absolute;
-    transform: translateX(4px) translateY(4px);
-    width: 250px;
-    height: 350px;
-    background: #6106B1;
-    z-index: -1;
-    user-select: none;
-}
-
-.about_me__text {
     display: flex;
     flex-direction: column;
-    user-select: none;
+    background: #030203;
+    color: #F2EFF5;
+    font-family: acme;
 }
 
-.purple_font {
-    color: #6106B1;
-}
-
-.about_me__text__hovered {
-    color: #030203;
-    position: relative;
-}
-
-.about_me__text__hovered::before {
-    background: #6106B1;
-    position: absolute;
-    z-index: -1;
-    content: "";
-    width: 100%;
-    height: 100%;
-}
-
-.about_me__text__unhovered {
-    color: #6106B1;
-}
-
-.about_me__text__unhovered::before {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #ff0000;
-}
-
-.floatingMenu {
+.aboutMeCard {
+    padding: 8%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    position: sticky;
-    z-index: 2;
 }
 
-.floatingMenu div:not(:last-child) {
+.mainPart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.myStack {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+}
+
+.myStackText {
+    display: inline-block;
+}
+
+.typedText {
+    font-size: xx-large;
+    border-right: .15em solid #6106B1;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    user-select: none;
+    animation: 
+        typing 2s steps(40, end) forwards,
+        blink .8s infinite;
+}
+
+@keyframes blink {
+    from { border-color: transparent }
+    to { border-color: #6106B1; }
+  }
+
+@keyframes typing {
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+.myStackContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 6px 12px 4px 12px;
+    border-radius: 6px;
+    width: fit-content;
+    height: fit-content;
+    background: #6106B1;
+    user-select: none;
     margin-right: 20px;
 }
 
-.activeMenu {
-    background: #8236C4;
-    border-radius: 90px;
-    width: 70px;
-    height: 70px;
+.myStackContainer img {
+    width: 50px;
+    height: 50px;
 }
 
-.notActiveMenu {
-    background: #461173;
-    border-radius: 90px;
-    width: 60px;
-    height: 60px;
+.myStackContainer div:not(:last-child) {
+    margin-right: 20px;
+}
+
+.greetingText {
+    font-size: xxx-large;
+    user-select: none;
+}
+
+.not_hovered_purple_text {
+    color: #6106B1;
+}
+
+.myPhoto {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    position: relative;
+    bottom: 13px;
+    right: 13px;
+    filter: drop-shadow(7px 7px 13px #10001e);
+}
+
+.photoContainer {
+    position: relative;
+    margin-right: 33px;
+}
+
+.photoContainer::before {
+    content: "";
+    width: 350px;
+    height: 450px;
+    background: #6106B1;
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    z-index: -1;
 }
